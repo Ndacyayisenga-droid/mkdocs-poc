@@ -35,10 +35,15 @@ jobs:
       - name: Build MkDocs site
         run: mkdocs build --strict
 
+      - name: Prepare for link check
+        run: |
+          mkdir -p temp-root
+          ln -s "$(pwd)/site" temp-root/mkdocs-poc
+
       - name: Link check (dead link detection)
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose --no-progress ./site
+          args: --root-dir temp-root --verbose --no-progress ./site
           fail: true
 
       - name: Upload artifact
