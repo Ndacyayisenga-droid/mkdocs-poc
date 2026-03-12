@@ -15,7 +15,7 @@ A Proof of Concept (POC) MkDocs documentation site demonstrating documentation r
 | TOC with linkable subheaders | `toc.permalink: true` |
 | Responsive design | Material theme (mobile/desktop) |
 | Accessibility | Semantic HTML, keyboard nav, theme toggle |
-| Dead link detection | `mkdocs-linkcheck` in CI |
+| Dead link detection | Lychee in CI |
 | Mermaid diagrams | PyMdown SuperFences |
 | Dark/light theme | Material palette toggle |
 | Code tabs | PyMdown Tabbed extension |
@@ -70,20 +70,22 @@ The PDF is written to `site/pdf/documentation.pdf`.
 
 ## CI/CD Pipeline
 
-The GitHub Actions workflow (`.github/workflows/deploy.yml`):
+The workflow follows [Material for MkDocs — Publishing your site](https://squidfunk.github.io/mkdocs-material/publishing-your-site/). It runs on push to `main` or `master` and:
 
 1. **Checkout** — Fetches the repository
-2. **Setup Python** — Python 3.11
-3. **Install dependencies** — `pip install -r requirements.txt`
-4. **Build** — `mkdocs build --strict`
-5. **Link check** — Lychee on built `site/` (dead link detection)
-6. **Deploy** — Pushes `site/` to GitHub Pages
+2. **Configure Git** — For the `gh-deploy` commit
+3. **Setup Python** — Caches pip/Material cache
+4. **Install dependencies** — `pip install -r requirements.txt`
+5. **Build** — `mkdocs build --strict`
+6. **Link check** — Lychee on built `site/` (dead link detection)
+7. **Deploy** — `mkdocs gh-deploy --force` (pushes built site to the `gh-pages` branch)
 
 ### Deploying to GitHub Pages
 
-1. In the repo: **Settings → Pages**
-2. Set source to **GitHub Actions**
-3. Push to `main` or `master` to trigger deploy
+1. In the repo go to **Settings → Pages**
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**
+3. Set **Branch** to `gh-pages` and folder to `/ (root)`, then Save
+4. Push to `main` or `master`; the workflow will create/update the `gh-pages` branch and your site will be at `https://<username>.github.io/<repository>/`
 
 ### Dead Link Detection
 
