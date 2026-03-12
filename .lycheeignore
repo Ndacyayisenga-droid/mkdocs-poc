@@ -1,9 +1,0 @@
-# Exclude intentionally broken link for POC demo (remove for production)
-httpbin\.org/status/404
-
-# Exclude local dev server URL (not reachable in CI)
-127\.0\.0\.1
-
-# Exclude placeholder URLs (update mkdocs.yml with your repo URL when deploying)
-your-org\.github\.io
-github\.com/your-org
