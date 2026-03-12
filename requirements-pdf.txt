@@ -1,0 +1,3 @@
+# Optional: PDF export (requires system deps: cairo, pango, gdk-pixbuf)
+# Install base first: pip install -r requirements.txt
+mkdocs-with-pdf>=0.9.0

@@ -1,0 +1,2 @@
+# Exclude intentionally broken link for POC demo (remove for production)
+httpbin\.org/status/404

@@ -1,0 +1,104 @@
+# MkDocs POC - Documentation Requirements Evaluation
+site_name: MkDocs POC Documentation
+site_description: Proof of Concept for MkDocs documentation requirements
+site_author: Documentation Team
+site_url: https://your-org.github.io/mkdocs-poc/
+repo_url: https://github.com/your-org/mkdocs-poc
+repo_name: mkdocs-poc
+copyright: Copyright &copy; 2025 Documentation Team
+
+# Material theme configuration
+theme:
+  name: material
+  language: en
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode (bonus: dark/light theme switch)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.tabs.link  # Code tabs
+    - content.code.copy  # Copy-to-clipboard button
+    - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+# Extensions for code highlighting, line numbers, Mermaid, tabs
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true  # Linkable subheaders in TOC
+      toc_depth: 3
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true  # Code tabs
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      linenums: true  # Enable line numbers in code blocks
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - tables
+
+# Plugins
+plugins:
+  - search:  # Built-in search
+      lang: en
+  - minify:
+      minify_html: true
+  # PDF export: use mkdocs-pdf.yml and requirements-pdf.txt (see README)
+  # - with-pdf:
+  #     output_path: pdf/documentation.pdf
+  # Dead link checking via mkdocs-linkcheck (CLI - see CI)
+  # AsciiDoc: mkdocs-asciidoctor-backend (optional - see README)
+
+# Navigation
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Code Examples: code-examples.md
+  - Accessibility: accessibility.md
+
+# Extra - for accessibility and PDF
+extra:
+  # Accessibility: ensure sufficient contrast, semantic structure
+  generator: false  # Reduce clutter for screen readers
+  analytics:
+    provider: null

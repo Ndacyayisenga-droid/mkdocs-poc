@@ -1,0 +1,76 @@
+# MkDocs config for PDF export
+# Usage: pip install -r requirements-pdf.txt && mkdocs build -f mkdocs-pdf.yml
+# Requires system deps: cairo, pango, gdk-pixbuf (see README)
+
+site_name: MkDocs POC Documentation
+site_description: Proof of Concept for MkDocs documentation requirements
+site_author: Documentation Team
+site_url: https://your-org.github.io/mkdocs-poc/
+copyright: Copyright &copy; 2025 Documentation Team
+
+theme:
+  name: material
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - content.tabs.link
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - tables
+
+plugins:
+  - search:
+      lang: en
+  - minify:
+      minify_html: true
+  - with-pdf:
+      output_path: pdf/documentation.pdf
+      toc_level: 3
+      cover_title: MkDocs POC Documentation
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Code Examples: code-examples.md
+  - Accessibility: accessibility.md
