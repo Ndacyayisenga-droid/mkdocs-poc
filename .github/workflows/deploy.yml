@@ -49,7 +49,14 @@ jobs:
       - name: Link check (dead link detection)
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --root-dir temp-root --verbose --no-progress ./site
+          args: >-
+            --root-dir temp-root
+            --verbose --no-progress
+            --exclude '127\.0\.0\.1'
+            --exclude 'your-org\.github\.io'
+            --exclude 'github\.com/your-org'
+            --exclude 'httpbin\.org/status/404'
+            ./site
           fail: true
 
       - name: Deploy to GitHub Pages
