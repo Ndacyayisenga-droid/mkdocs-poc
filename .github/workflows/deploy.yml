@@ -25,6 +25,15 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Set up Ruby (for AsciiDoc)
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: false
+
+      - name: Install Asciidoctor
+        run: gem install asciidoctor
+
       - name: Cache dependencies
         run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
 
