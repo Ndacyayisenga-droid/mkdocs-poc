@@ -24,6 +24,6 @@ theme:
 
 == Cross-references
 
-You can link to other docs, e.g. the link:index.md[Home] page or link:getting-started.md[Getting Started].
+You can link to other docs, e.g. the link:../[Home] page or link:../getting-started/[Getting Started].
 
 See the README section "Optional: AsciiDoc Support" for how to enable the AsciiDoc backend and add this page to your nav.

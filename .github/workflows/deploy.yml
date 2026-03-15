@@ -66,6 +66,7 @@ jobs:
             --exclude 'github\.com/your-org'
             --exclude 'httpbin\.org/status/404'
             --exclude 'ndacyayisenga-droid\.github\.io'
+            --exclude 'file://'
             ./site
           fail: true
 
