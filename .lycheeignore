@@ -5,5 +5,8 @@ httpbin\.org/status/404
 127\.0\.0\.1
 
 # Exclude placeholder URLs (update mkdocs.yml with your repo URL when deploying)
+# Use lowercase; URLs are normalized and Lychee matching may be case-sensitive
 Ndacyayisenga-droid\.github\.io
+ndacyayisenga-droid\.github\.io
 github\.com/Ndacyayisenga-droid
+github\.com/ndacyayisenga-droid
