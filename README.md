@@ -101,7 +101,8 @@ mkdocs-poc/
 │   ├── index.md
 │   ├── getting-started.md
 │   ├── code-examples.md
-│   └── accessibility.md
+│   ├── accessibility.md
+│   └── asciidoc-example.adoc   # Optional: AsciiDoc example (see README)
 ├── mkdocs.yml
 ├── mkdocs-pdf.yml       # Config for PDF export
 ├── requirements.txt
@@ -111,15 +112,22 @@ mkdocs-poc/
 └── README.md
 ```
 
-## Optional: AsciiDoc Support
+## AsciiDoc support
 
-For AsciiDoc support, you can use `mkdocs-asciidoctor-backend` (beta):
+This POC includes a sample AsciiDoc page so you can try Docs-as-Code with AsciiDoc.
+
+- **Example file:** `docs/asciidoc-example.adoc` — minimal AsciiDoc (headings, list, code block, cross-references).
+- **In the site:** Open **AsciiDoc Example** in the navigation (or go to `/asciidoc-example/`). You should see the line: *"This page is written in AsciiDoc."*
+
+The `mkdocs-asciidoctor-backend` plugin is enabled in `mkdocs.yml` and listed in `requirements.txt`. After `pip install -r requirements.txt` and `mkdocs serve`, the AsciiDoc page is built and linked in the nav.
+
+**If the AsciiDoc page is missing or empty:** the plugin uses the [Asciidoctor](https://asciidoctor.org/) tool (Ruby). Install Ruby and run:
 
 ```bash
-pip install mkdocs-asciidoctor-backend
+gem install asciidoctor
 ```
 
-Then configure it in `mkdocs.yml` and add `.adoc` files. Note: this replaces the default Markdown backend; mixed Markdown/AsciiDoc has limited support.
+Then run `mkdocs serve` again. The plugin is configured with `fail_on_error: false` and `ignore_missing: true`, so the rest of the site still builds if Asciidoctor is not available.
 
 ## License
 
