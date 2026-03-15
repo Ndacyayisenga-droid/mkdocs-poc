@@ -1,0 +1,29 @@
+= AsciiDoc Example
+
+This page is written in AsciiDoc. It demonstrates that the MkDocs POC can use *AsciiDoc* as well as Markdown when you enable the `mkdocs-asciidoctor-backend` plugin.
+
+== Why AsciiDoc?
+
+AsciiDoc offers:
+
+* Strong semantics (sections, admonitions, cross-references)
+* Good fit for long-form technical docs and books
+* Output to HTML, PDF, and more via Asciidoctor
+
+== Quick example
+
+A minimal YAML snippet:
+
+[source,yaml]
+----
+site_name: MkDocs POC
+docs_dir: docs
+theme:
+  name: material
+----
+
+== Cross-references
+
+You can link to other docs, e.g. the link:index.md[Home] page or link:getting-started.md[Getting Started].
+
+See the README section "Optional: AsciiDoc Support" for how to enable the AsciiDoc backend and add this page to your nav.

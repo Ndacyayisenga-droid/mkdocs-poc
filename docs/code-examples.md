@@ -71,7 +71,42 @@ mkdocs build
 mkdocs serve
 ```
 
-## Code Tabs
+## Language tabs
+
+Use tabs to present equivalent snippets in multiple languages while saving vertical space. MkDocs supports this via the **pymdownx.tabbed** extension (already enabled in `mkdocs.yml`).
+
+Same workflow in different formats:
+
+=== "Bash"
+
+    ``` bash
+    npm install
+    npm run start
+
+    # Build the static site
+    npm run build
+    ```
+
+=== "YAML"
+
+    ``` yaml
+    scripts:
+      start: docusaurus start
+      build: docusaurus build
+    ```
+
+=== "JSON"
+
+    ``` json
+    {
+      "scripts": {
+        "start": "docusaurus start",
+        "build": "docusaurus build"
+      }
+    }
+    ```
+
+## Code tabs (shells)
 
 Compare the same command across shells:
 
@@ -127,6 +162,32 @@ classDiagram
         +search
     }
     MkDocs --> Material : uses
+```
+
+### Flowchart
+
+Doc build pipeline:
+
+```mermaid
+flowchart LR
+    subgraph Source
+        MD[Markdown Files]
+        Config[mkdocs.yml Configuration]
+    end
+
+    subgraph Build
+        MkDocs[MkDocs Build]
+    end
+
+    subgraph Output
+        HTML[Static HTML Site]
+        Site[GitHub Pages]
+    end
+
+    MD --> MkDocs
+    Config --> MkDocs
+    MkDocs --> HTML
+    HTML --> Site
 ```
 
 ## Tables and Admonitions
