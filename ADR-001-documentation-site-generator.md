@@ -73,10 +73,10 @@ Python and pip, configuration in `mkdocs.yml`, **Material** theme provides searc
 TOML configuration (`zensical.toml`), feature flags for navigation, search highlighting, code annotations, and theme variants. Strong authoring experience for Markdown extensions (admonitions, tabs, Mermaid, footnotes, math, tooltips). Built by the creators of Material for MkDocs (@squidfunk) with @pawamoy now also contributing.
 
 - Good: Built by the team with the deepest experience in documentation tooling for the MkDocs ecosystem.
-- Good: Reads existing `mkdocs.yml` natively — low migration cost.
+- Good: Reads existing `mkdocs.yml` natively.
 - Good: 5x faster rebuilds and redesigned search engine.
 - Good: Single tool covers all "Must" requirements without plugins.
-- Good: Most adopted MkDocs successor (3,700+ GitHub stars as of March 2026).
+- Good: Most adopted MkDocs successor (4,000+ GitHub stars as of April 2026).
 - Bad: Younger project — ecosystem and third-party integrations are still maturing.
 - Bad: Team familiarity may be lower initially, though the authoring model is very similar to Material for MkDocs.
 
