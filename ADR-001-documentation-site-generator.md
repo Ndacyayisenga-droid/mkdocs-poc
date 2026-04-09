@@ -35,9 +35,9 @@ During evaluation, the MkDocs project entered a period of significant instabilit
 ## Considered Options
 
 1. **MkDocs with Material for MkDocs** (`mkdocs-poc`) - Python toolchain, `mkdocs.yml`, rich plugin ecosystem (PyMdown, PDF via WeasyPrint, AsciiDoc via backend plugin).
-2. **Zensical** (`zensical-poc`) - Modern static site generator built by the creators of Material for MkDocs; `zensical.toml` configuration, reads existing `mkdocs.yml` natively ([zensical.org](https://zensical.org/docs/)).
-3. **Quarkus Roq** (`roq-poc`) - JVM-based static site generation integrated with Quarkus; content under `content/`, batch build to `target/roq/`, Pagefind + PDF in CI.
-4. **Docusaurus v3** (`docusaurus-poc`) - Node.js / React static site generator; MDX-first docs, local search plugin, Playwright-based PDF export path, strict broken-link handling at build time.
+2. **Zensical** (`zensical-poc`) - Modern static site generator built by the creators of Material for MkDocs, `zensical.toml` configuration, reads existing `mkdocs.yml` natively ([zensical.org](https://zensical.org/docs/)).
+3. **Quarkus Roq** (`roq-poc`) - JVM-based static site generation integrated with Quarkus, content under `content/`, batch build to `target/roq/`, Pagefind + PDF in CI.
+4. **Docusaurus v3** (`docusaurus-poc`) - Node.js / React static site generator, MDX-first docs, local search plugin, Playwright-based PDF export path, strict broken-link handling at build time.
 
 ## Decision
 
@@ -48,7 +48,7 @@ We chose Zensical because it inherits the proven UX of Material for MkDocs while
 ## Positive Consequences
 
 - Built and maintained by the team behind Material for MkDocs, the most widely used MkDocs theme continuity of design quality and domain expertise.
-- Authors write Markdown in `docs/` and configure `zensical.toml`; the authoring experience is familiar to anyone who has used MkDocs + Material.
+- Authors write Markdown in `docs/` and configure `zensical.toml`, the authoring experience is familiar to anyone who has used MkDocs + Material.
 - Almost all "Must" requirements from GitHub [GitHub #185](https://github.com/support-and-care/maven-support-and-care/issues/185) are met out of the box without third-party plugins apart from PDF export which is in progress https://zensical.org/docs/community/faqs/?h=pdf#will-you-provide-support-for-producing-pdf-outputs.
 - Avoids the governance and stagnation risk that currently affects MkDocs.
 - Fastest build times of the evaluated options (claimed 5x faster than MkDocs).
@@ -57,7 +57,7 @@ We chose Zensical because it inherits the proven UX of Material for MkDocs while
 
 ### MkDocs with Material for MkDocs
 
-Python and pip; configuration in `mkdocs.yml`; **Material** theme provides search, dark/light mode, tabs, Mermaid, and copy-to-clipboard for code. PDF is available via `mkdocs-with-pdf` (WeasyPrint and system libraries). **AsciiDoc** is supported via a plugin (Asciidoctor when installed). **Lychee** can validate the built `site/` in CI.
+Python and pip, configuration in `mkdocs.yml`, **Material** theme provides search, dark/light mode, tabs, Mermaid, and copy-to-clipboard for code. PDF is available via `mkdocs-with-pdf` (WeasyPrint and system libraries). **AsciiDoc** is supported via a plugin (Asciidoctor when installed). **Lychee** can validate the built `site/` in CI.
 
 - Good: Very large existing community and plugin set.
 - Good: Authors only need Markdown for the common case.
@@ -85,7 +85,7 @@ TOML configuration (`zensical.toml`), feature flags for navigation, search highl
 Fits **Java-first** teams already on **Quarkus**: `mvn quarkus:dev` for local preview, batch generation for static output. Demonstrates **AsciiDoc** in-repo, **Pagefind** for search, **PDF** and **Lychee** in CI, aligned with the MkDocs POC feature set at a high level.
 
 - Good: Native fit for microservices or platforms where Quarkus is already standard.
-- Good: Static output under `target/roq/` for Pages; reuse of Maven/CI patterns.
+- Good: Static output under `target/roq/` for Pages, reuse of Maven/CI patterns.
 - Bad: Heavier than a pure docs tool if the repo is documentation-only.
 - Bad: Authors must be comfortable with the Roq content/layout model.
 - Bad: Node tooling still appears for PDF/search automation in the POC.
