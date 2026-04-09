@@ -34,10 +34,10 @@ During evaluation, the MkDocs project entered a period of significant instabilit
 
 ## Considered Options
 
-1. **MkDocs with Material for MkDocs** (`mkdocs-poc`) - Python toolchain, `mkdocs.yml`, rich plugin ecosystem (PyMdown, PDF via WeasyPrint, AsciiDoc via backend plugin).
-2. **Zensical** (`zensical-poc`) - Modern static site generator built by the creators of Material for MkDocs, `zensical.toml` configuration, reads existing `mkdocs.yml` natively ([zensical.org](https://zensical.org/docs/)).
-3. **Quarkus Roq** (`roq-poc`) - JVM-based static site generation integrated with Quarkus, content under `content/`, batch build to `target/roq/`, Pagefind + PDF in CI.
-4. **Docusaurus v3** (`docusaurus-poc`) - Node.js / React static site generator, MDX-first docs, local search plugin, Playwright-based PDF export path, strict broken-link handling at build time.
+1. **MkDocs with Material for MkDocs**
+2. **Zensical**
+3. **Quarkus Roq**
+4. **Docusaurus v3**
 
 ## Decision
 
