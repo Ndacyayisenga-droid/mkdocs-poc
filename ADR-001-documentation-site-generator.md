@@ -49,8 +49,7 @@ We chose Zensical because it inherits the proven UX of Material for MkDocs while
 
 - Built and maintained by the team behind Material for MkDocs, the most widely used MkDocs theme continuity of design quality and domain expertise.
 - Authors write Markdown in `docs/` and configure `zensical.toml`; the authoring experience is familiar to anyone who has used MkDocs + Material.
-- Reads existing `mkdocs.yml`, so migration from MkDocs is straightforward if needed.
-- All "Must" requirements from GitHub [GitHub #185](https://github.com/support-and-care/maven-support-and-care/issues/185) are met out of the box without third-party plugins.
+- Almost all "Must" requirements from GitHub [GitHub #185](https://github.com/support-and-care/maven-support-and-care/issues/185) are met out of the box without third-party plugins apart from PDF export which is in progress https://zensical.org/docs/community/faqs/?h=pdf#will-you-provide-support-for-producing-pdf-outputs.
 - Avoids the governance and stagnation risk that currently affects MkDocs.
 - Fastest build times of the evaluated options (claimed 5x faster than MkDocs).
 
