@@ -65,7 +65,7 @@ Python and pip, configuration in `mkdocs.yml`, **Material** theme provides searc
 - Good: Strict `mkdocs build --strict` fits CI gates.
 - Bad: **Project has seen no meaningful development in 18 months.**
 - Bad: **Material for MkDocs has entered maintenance mode (Nov 2025).**
-- Bad: **MkDocs v2 rewrite removes the plugin system, breaking the ecosystem; the community has fragmented into competing successors.**
+- Bad: **MkDocs v2 rewrite removes the plugin system, breaking the ecosystem, the community has fragmented into competing successors.**
 - Bad: Python + optional Ruby (AsciiDoc) + PDF stack increases dependency surface.
 
 ### Zensical
@@ -92,7 +92,7 @@ Fits **Java-first** teams already on **Quarkus**: `mvn quarkus:dev` for local pr
 
 ### Docusaurus v3
 
-**Node.js >= 20**; docs in **Markdown/MDX** with React components when needed; **local search** via `docusaurus-plugin-search-local`; **Mermaid** via theme plugin; build fails on broken links when configured (`onBrokenLinks: 'throw'`). AsciiDoc in the POC uses a **build-time conversion** path (not first-class `.adoc` routing).
+**Node.js >= 20**, docs in **Markdown/MDX** with React components when needed, **local search** via `docusaurus-plugin-search-local`, **Mermaid** via theme plugin, build fails on broken links when configured (`onBrokenLinks: 'throw'`). AsciiDoc in the POC uses a **build-time conversion** path (not first-class `.adoc` routing).
 
 - Good: Excellent for product docs that may grow into custom React UI.
 - Good: Strong versioning and i18n story for larger doc programs.
