@@ -6,7 +6,7 @@
 
 **Date:** 2026-04-08
 
-**Related issues:** [GitHub #185](https://github.com/support-and-care/maven-support-and-care/issues/185), [GitHub #186](https://github.com/support-and-care/maven-support-and-care/issues/186), GitHub #56
+**Related issues:** [GitHub #185](https://github.com/support-and-care/maven-support-and-care/issues/185), [GitHub #186](https://github.com/support-and-care/maven-support-and-care/issues/186)
 
 ## Context and Problem Description
 
